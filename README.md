@@ -15,42 +15,39 @@
  
 ### Project Overview
 
-This data project aims to provide insights into crime trends in Los Angeles County in 2023. This mapping tool is designed to assist the progressive organization in identifying key areas to concentrate its decriminalization and anti-carceral initiatives. This will help the organization create a targeted ad campaign, and potentially secure funding resources.
+This data project aims to provide valuable insights into crime trends across Los Angeles County for the year 2023. The goal is to develop a mapping tool that will help organizations focused on social justice initiatives target areas where decriminalization efforts and anti-carceral policies can be most effectively implemented. By visualizing crime patterns, the tool can assist organizations in shaping more focused outreach programs, ad campaigns, and secure funding.
 
 ### Data Sources
 
-Crime Data: The primary dataset used for this analysis is the "2023crimedata.csv" file, containing detailed information from the Sheriff's office about crime incidents in LA county in 2023.
+Crime Data: Crime Data: The primary dataset for this analysis is the 2023crimedata.csv file, sourced from the Los Angeles Sheriff's Office. This dataset includes detailed information on crime incidents across LA County in 2023.
+[LA County GIS Data](https://lacounty.maps.arcgis.com/home/item.html?id=a76e9954365d4608aa8ae81959f402f7&sortOrder=desc&sortField=defaultFSOrder): The City_and_Unincorporated_Boundaries_(Legal).shp dataset provides the geographic boundaries for the cities and unincorporated areas within Los Angeles County. This serves as the base layer for geographical mapping.
 
-[LA County GIS Data](https://lacounty.maps.arcgis.com/home/item.html?id=a76e9954365d4608aa8ae81959f402f7&sortOrder=desc&sortField=defaultFSOrder): The "City_and_Unincorporated_Boundaries_(Legal).shp" is a key dataset that enables the geographical mapping of Los Angeles County and its cities. This dataset serves as a base for creating a combined geographic table with crime data.
 
 ### Tools
 
-- Excel - Data Cleaning
-- PG Admin 4 - Database Administration - Data Analysis
-  - [Download here](https://www.pgadmin.org/download/pgadmin-4-windows/)
-- PostgreSQL - Relational Database Management Systems (RDBMS) - Data Analysis
-  - [Download here](https://www.postgresql.org/download/)
-- Python - Data Transformation and Data Visualization
-  - [Download here](https://www.python.org/downloads/)
-- PyCharm - Integrated Development Environment (IDE)
-  - [Download here](https://www.jetbrains.com/pycharm/download/?section=mac)
+- Excel: Data cleaning and inspection
+- PG Admin 4: Database management and analysis
+- PostgreSQL: Relational Database Management System (RDBMS) for data analysis
+- Python: Data transformation and visualization
+- PyCharm: Integrated Development Environment (IDE)
+
 
 ### Data Cleaning/Preparation
 
-In the initial data preparation phase, I performed the following tasks:
-1. Data loading and inspection
-2. Handling missing values
-3. Data cleaning and formatting
+The data preparation phase involved the following steps:
+
+Loading and inspecting the dataset
+Handling missing values
+Cleaning and formatting the data
 
 ### Exploratory Data Analysis
 
-EDA involved exploring the crime data, coming across questions such as:
+During EDA, several questions arose:
 
-- There are only 88 official cities in LA, so why does our crime dataset include more than that?
-- Is all of this crime data contained within LA county?
-- How many crime categories are there, and how might we aggregate these?
+Why does the crime dataset include more than 88 cities when Los Angeles County officially has only 88 cities?
+Is all of the crime data contained within LA County?
+How can crime categories be grouped or aggregated for further analysis?
 
-  
 ### Data Analysis and Transformation
 
 ```sql
@@ -80,12 +77,11 @@ I used Python: geopandas, plotly, dash web app, and other libraries to create a 
 
 ### Limitations
 
-This mapping tool is dedicated solely to crime data. There is potential to enhance it by incorporating additional layers, such as racial demographics and socio-economic status, to examine patterns and connections related to bias within the criminal justice system. 
-
-The heat map may present a skewed representation by emphasizing areas with higher populations.
+Data Focus: The tool currently focuses solely on crime data. Future improvements could include the addition of demographic data (such as race and socio-economic status) to identify correlations between crime rates and these factors, further informing decriminalization efforts.
+Heat Map Bias: The heat map may emphasize areas with higher population densities, which could skew the representation of crime across the county.
 
 ### Next Steps
 
-- Transform data to normalize based on population density, providing this data as primary or additional heat map layers for greater context.
-- Include data from the past five years, spanning 2018-2023, with the ability for the user to select specific years.
-- Provide options to overlay demographic information onto the map in addition to the arrest data points.
+- Normalization: Normalize the data based on population density to provide more accurate insights, which could be incorporated into the heat map as additional layers.
+- Year Range: Include crime data from 2018-2023, allowing users to filter by specific years.
+- Demographic Overlay: Implement features that overlay demographic data on the map, alongside crime statistics, to explore connections between demographic variables and crime patterns.est data points.
